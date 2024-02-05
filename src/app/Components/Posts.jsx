@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react"
-function Posts({posts}) {
+import {HeartOutlined}  from "@ant-design/icons"
+function Posts({posts, loading}) {
+
+    if(loading){
+        return <h2>Loading...</h2>
+    }
 
     const [dogs, setGods] = useState([])
 
@@ -12,22 +17,26 @@ function Posts({posts}) {
        };
        fetchPosts();
     },[]);
-    
+    function Hendler () {
+        console.log(1233)
+    }
     
   return (
     
-    <div className="flex flex-wrap ">
+    <div className="flex flex-wrap  items-center ">
         
         {posts.map((post) => (
-                <div className="flex flex-col justify-between p-5 m-2 border-2 " key={post.id}>
-                    <img src={dogs[post.id]} alt="" />
-                    <div className="w-96  ">
-                        <span className="text-black text-3xl font-mono font-bold w-1">{post.title.slice(0,15)}</span>
-                        <span className="text-black text-3xl font-mono font-bold">{post.title.slice(0,60)}</span>
+                <div className="flex flex-col h-full items-center justify-center p-2 m-2  bg-gray-200" key={post.id}>
+                    <img  className=" cursor-pointer" src={dogs[post.id]} alt="dogs" />
+                    <div className=" flex items-center justify-center w-96 pt-3 pb-3 ">
+                        <div>
+                            <span className=" text-black text-3xl font-sans font-bold">{post.title.slice(0,15)}</span>
+                            <span className=" text-black text-3xl font-sans font-bold">{post.title.slice(0,60)}</span>
+                        </div>
+                        <HeartOutlined />
+                        
                     </div>
-                    <div className="cursor-pointer mt-5">
-                        <span className="bg-sky-500/100 p-2 ">ДОБАВИТЬ</span>
-                    </div>
+                    
                 </div>
         ))}
     </div>
