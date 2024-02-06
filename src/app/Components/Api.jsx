@@ -27,7 +27,6 @@ function Api() {
     const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber)
-    console.log(paginate)
     return(
         <div >
             
