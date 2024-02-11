@@ -15,9 +15,13 @@ function Posts({posts, loading}) {
         return <h2>Loading...</h2>
     }
 
+    const styleSet = () => {
+
+    }
     const [dogs, setGods] = useState([])
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [ currentValue, setCurrentValue] = useState([]);
+    const [style, setStyle] = useState(false);
     useEffect(() => {
        const fetchPosts = async() => {
         const res = await fetch("https://dog.ceo/api/breed/hound/afghan/images")
@@ -27,10 +31,9 @@ function Posts({posts, loading}) {
        };
        fetchPosts();
     },[]);
-    function Hendler (props) {
-        console.log(props)
-    }
-    console.log(currentValue)
+
+    
+    
   return (
     
     <div className="flex flex-wrap  items-center ">
@@ -42,7 +45,7 @@ function Posts({posts, loading}) {
                         {currentValue.title}
                         {currentValue.body}
                     </div>
-                    <HeartOutlined style={{ fontSize: '36px', paddingLeft: '10px', cursor: "pointer"}}/>
+                    <HeartOutlined onClick={`color: '#08c' : ' '`} style={{ fontSize: '36px', paddingLeft: '10px', cursor: "pointer", }}/>
                 </div>
             </div>
             
@@ -56,7 +59,7 @@ function Posts({posts, loading}) {
                             <span className=" text-black text-3xl font-sans font-bold">{post.title.slice(0,15)}</span>
                             <span className=" text-black text-3xl font-sans font-bold">{post.title.slice(0,60)}</span>
                         </div>
-                        <HeartOutlined style={{ fontSize: '36px', paddingLeft: '10px', cursor: "pointer"}}/>
+                        <HeartOutlined onClick={styleSet}  style={{ fontSize: '36px', paddingLeft: '10px', cursor: "pointer", }}/>
                         
                     </div>
                     

@@ -19,7 +19,7 @@ function Pagination({postsPerPage, totalPosts, paginate}) {
         <nav>
             <ul className='mt-4 mb-4 flex justify-center'>
                 {pageNumbers.map((number) => (
-                    <li key={number} className={` bg-zinc-300  ${activePage===number ? "bg-slate-900 text-white" : ""}`}>
+                    <li key={number} className={` bg-zinc-300  ${activePage===number ? "bg-slate-800 text-white" : ""}`}>
                         <a className='p-2 m-1' onClick={() =>{
                             handlePageClick(number); paginate(number)}} href="#">{number}</a>
                     </li>
