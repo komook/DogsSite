@@ -1,3 +1,5 @@
+import "../styles/pagination.css"
+
 import React from 'react'
 import { useState } from 'react';
 
@@ -17,10 +19,10 @@ function Pagination({postsPerPage, totalPosts, paginate}) {
   return (
     <div>
         <nav>
-            <ul className='mt-4 mb-4 flex justify-center'>
+            <ul className='container'>
                 {pageNumbers.map((number) => (
-                    <li key={number} className={` bg-zinc-300  ${activePage===number ? "bg-slate-800 text-white" : ""}`}>
-                        <a className='p-2 m-1' onClick={() =>{
+                    <li key={number} className={` color-text  ${activePage===number ? "color-active" : ""}`}>
+                        <a className='link' onClick={() =>{
                             handlePageClick(number); paginate(number)}} href="#">{number}</a>
                     </li>
                 ))}

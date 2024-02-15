@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+}
+
+.color-text{
+    background-color: rgb(212 212 216);
+}
+.color-active{
+    color: white;
+    background-color: rgb(30 41 59);
+}
+.link{
+    padding: 4px;
+    margin: 2px;
+}
